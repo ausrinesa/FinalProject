@@ -1,0 +1,138 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1518368958604-9865bd4d2d72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+    background-size: cover;
+}
+
+.table {
+    background-color: rgba(226, 242, 217, 0.9);
+    border-radius: 10px;
+}
+
+thead {
+    background-color: #344e41;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    color: #a3b18a;
+}
+
+a {
+    letter-spacing: 2px;
+    color: #a3b18a;
+}
+
+a:hover {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #f7ef81;
+}
+
+h1 {
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: #344e41;
+    margin-top: 40px;
+}
+
+h5 {
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: #344e41;
+}
+
+#form {
+    border: 1px solid #3a5a40;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    padding: 10px;
+    background-color: rgba(241, 244, 240, 0.9);
+    color: #344e41;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #3a5a40;
+}
+
+svg {
+    height: 30px;
+    width: 30px;
+    color: #a3b18a;
+}
+
+svg:hover {
+    color: #f7ef81;
+}
+
+button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
+#searchBtn {
+    border: none;
+    font-weight: bold;
+    border: none;
+    background-color: cadetblue;
+    color: antiquewhite;
+}
+
+#editBtn {
+    margin-right: 3px;
+    font-size: 12px;
+    padding: 5px 20px;
+    letter-spacing: 1px;
+}
+
+#deleteBtn {
+    font-size: 12px;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+}
+
+#filterForm {
+    margin-left: 25%;
+    width: 50%;
+}
+
+#filterBtn {
+    background-color: cadetblue;
+    border: none;
+    padding: 6px 25px;
+    letter-spacing: 2px;
+}
+
+#saveBtn {
+    border: none;
+    padding: 6px 25px;
+    letter-spacing: 3px;
+    margin-left: 40%;
+    font-weight: bold;
+    border: none;
+    background-color: cadetblue;
+}
+
+#updateBtn {
+    border: none;
+    padding: 6px 25px;
+    letter-spacing: 3px;
+    margin-left: 40%;
+    font-weight: bold;
+    border: none;
+    background-color: cadetblue;
+    margin-top: 40px;
+    color: antiquewhite;
+}
+
+
+@media (max-width: 1000px) {
+    .filter-input {
+        width: 100%;
+    }
+
+    #filterBtn {
+        width: 100%;
+    }
+}
