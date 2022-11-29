@@ -49,4 +49,9 @@ class TripContoller
         return Trip::search();
     }
 
+    public static function getMonth()
+    {
+        return Trip::getMonth();
+    }
+
 }

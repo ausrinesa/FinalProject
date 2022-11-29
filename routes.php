@@ -10,6 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location:./index.php");
         die;
     }
+
+    if (isset($_POST['savePart'])) {
+        ParticipantContoller::store();
+        header("Location:./index.php");
+        die;
+    }
+
     if (isset($_POST['edit'])) {
         $trip = TripContoller::show();
         $trips = TripContoller::index();
@@ -27,6 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: ./index.php");
         die;
     }
+
+    if (isset($_POST['savePar'])) {
+        ParticipantContoller::store();
+        header("Location: ./index.php");
+        die;
+    }
+    $months = TripContoller::getMonth();
+
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -40,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $trips = TripContoller::search();
     }
     $participants = ParticipantContoller::index();
-    $months = ParticipantContoller::showMonth();
+
 }
 
 

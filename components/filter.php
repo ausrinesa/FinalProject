@@ -4,10 +4,10 @@
 
             <div class="col-lg-3">
 
-                <input type="number" class="form-control filter" placeholder="people: min" name="peopleFrom">
+                <input type="number" class="form-control filter" placeholder="group size: from" name="peopleFrom">
             </div>
             <div class="col-lg-3">
-                <input type="number" class="form-control filter" placeholder="people: max" name="peopleTo">
+                <input type="number" class="form-control filter" placeholder="group size: to" name="peopleTo">
 
             </div>
 

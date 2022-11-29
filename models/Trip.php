@@ -92,12 +92,6 @@ class Trip
         $query = "SELECT * FROM `trips` ";
         $first = true;
 
-        if ($_GET['withAnimals'] != "") {
-            $query .= "WHERE `with_animals`=" . $_GET['withAnimals'];
-            $first = false;
-
-        }
-
         if ($_GET['peopleFrom'] != "") {
             $query .= (($first) ? "WHERE" : "AND") . " `max_people_allowed` >= " . $_GET['peopleFrom'] . " ";
             $first = false;
@@ -116,6 +110,12 @@ class Trip
             case '2':
                 $query .= " ORDER BY `distance` DESC";
                 break;
+
+        }
+
+        if ($_GET['withAnimals'] != "") {
+            $query .= "WHERE `with_animals`=" . $_GET['withAnimals'];
+            $first = false;
 
         }
 
@@ -140,6 +140,20 @@ class Trip
         }
         $db->conn->close();
         return $trips;
+    }
+
+    public static function getMonth()
+    {
+        $months = [];
+        $db = new DB();
+        $query = "SELECT DISTINCT`month` FROM `trips` ";
+        $result = $db->conn->query($query);
+
+        while ($row = $result->fetch_assoc()) {
+            $months[] = $row['month'];
+        }
+        $db->conn->close();
+        return $months;
     }
 
 }

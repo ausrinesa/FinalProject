@@ -16,6 +16,11 @@ class ParticipantContoller
         return $months;
     }
 
+    public static function store()
+    {
+        Participant::create();
+    }
+
 // public static function destroy()
 // {
 //     Participant::destroy($_POST['id']);

@@ -46,6 +46,17 @@ class Participant
         return $months;
     }
 
+    public static function create()
+    {
+        $db = new DB();
+        $stmt = $db->conn->prepare("INSERT INTO `participants`( `name`, `surname`,`trip_id`) VALUES (?,?,?)");
+        $stmt->bind_param("ssi", $_POST['name'], $_POST['surname'], $_POST['tripId']);
+        $stmt->execute();
+        $stmt->close();
+
+        $db->conn->close();
+    }
+
 // public static function destroy($id)
 // {
 //     $db = new DB();

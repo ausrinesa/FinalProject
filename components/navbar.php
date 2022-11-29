@@ -13,5 +13,13 @@
             <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
         </form>
     </div>
+
+    <div class="container-fluid">
+        <a href="./register.php">REGISTER</a>
     </div>
+
+    <div class="container-fluid">
+        <a href="./form.php">New Trip</a>
+    </div>
+
 </nav>
