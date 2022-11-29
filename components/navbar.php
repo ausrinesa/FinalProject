@@ -1,4 +1,4 @@
-<nav class="navbar" style="background-color:#3a5a40;">
+<nav class="navbar navbar-expand-lg" style="background-color:#3a5a40;">
     <div class="container-fluid">
         <a class="navbar-brand" href="./index.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
@@ -7,19 +7,11 @@
                 <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
             </svg></a>
 
-
-        <form class="d-flex" role="search" method="GET">
-            <input class="form-control me-2" type="search" placeholder="Search month" aria-label="Search" name='search'>
-            <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
-        </form>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="./register.php" style="color:#a3b18a;;">REGISTER</a>
+                <a class="nav-link" href="./form.php" style=color:#a3b18a;;">ADD TRIP</a>
+            </div>
+        </div>
     </div>
-
-    <div class="container-fluid">
-        <a href="./register.php">REGISTER</a>
-    </div>
-
-    <div class="container-fluid">
-        <a href="./form.php">New Trip</a>
-    </div>
-
 </nav>
