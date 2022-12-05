@@ -37,21 +37,25 @@ class TripContoller
         Trip::destroy($_POST['id']);
     }
 
-
     public static function filter()
     {
         return Trip::filter();
 
     }
 
-    public static function search()
-    {
-        return Trip::search();
-    }
+    // public static function search()
+    // {
+    //     return Trip::search();
+    // }
 
     public static function getMonth()
     {
         return Trip::getMonth();
+    }
+    public static function showPar()
+    {
+        $tripPar = Trip::findPar($_GET['id']);
+        return $tripPar;
     }
 
 }

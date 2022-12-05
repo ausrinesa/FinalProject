@@ -18,26 +18,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (isset($_POST['edit'])) {
-        $trip = TripContoller::show();
-        $trips = TripContoller::index();
+        $participant = ParticipantContoller::show();
+        $participants = ParticipantContoller::index();
+        header("Location: ./register.php");
         $edit = true;
     }
 
     if (isset($_POST['update'])) {
-        TripContoller::update();
-        header("Location: ./index.php");
+        ParticipantContoller::update();
+        header("Location: ./main.php");
         die;
     }
     if (isset($_POST['destroy'])) {
-        TripContoller::destroy();
-        // ParticipantContoller::destroy();
-        header("Location: ./index.php");
+        ParticipantContoller::destroy();
+        header("Location: ./main.php");
         die;
     }
 
     if (isset($_POST['savePar'])) {
         ParticipantContoller::store();
-        header("Location: ./index.php");
+        header("Location: ./main.php");
         die;
     }
     $months = TripContoller::getMonth();
@@ -47,18 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['filter'])) {
         $trips = TripContoller::filter();
-    } else if (isset($_GET['filter']) == "") {
-        $trips = TripContoller::index();
-    } else if (isset($_GET['participants'])) {
-        $participants = ParticipantContoller::index();
-    } else if (isset($_GET['search'])) {
-        $trips = TripContoller::search();
     }
+    if (isset($_GET['filter']) == "") {
+        $trips = TripContoller::index();
+    }
+    if (isset($_GET['participants'])) {
+        $participants = ParticipantContoller::index();
+    }
+    // if (isset($_GET['search'])) {
+    //     $trips = TripContoller::search();
+    // }
     $participants = ParticipantContoller::index();
 
 }
-
-
-
-
 ?>

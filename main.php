@@ -1,13 +1,12 @@
 <?php include "./components/head.php";
 include "./components/navbar.php";
-include "./components/filter.php";
 ?>
 
+<?php include "./components/filter.php"; ?>
 <div class="container">
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>trip id</th>
                 <th>month</th>
                 <th>group size</th>
                 <th>distance</th>
@@ -22,9 +21,6 @@ include "./components/filter.php";
         <tbody>
             <?php foreach ($trips as $trip) { ?>
             <tr>
-                <td>
-                    <?= $trip->id ?>
-                </td>
                 <td>
                     <?= $trip->month ?>
                 </td>

@@ -32,20 +32,6 @@ class Participant
         return $participants;
     }
 
-    public static function getMonth()
-    {
-        $months = [];
-        $db = new DB();
-        $query = "SELECT DISTINCT `month` FROM `participants` LEFT JOIN `trips` on `participants`.`trip_id`= `trips`.`id`";
-        $result = $db->conn->query($query);
-
-        while ($row = $result->fetch_assoc()) {
-            $months[] = $row['month'];
-        }
-        $db->conn->close();
-        return $months;
-    }
-
     public static function create()
     {
         $db = new DB();
@@ -57,19 +43,42 @@ class Participant
         $db->conn->close();
     }
 
-// public static function destroy($id)
-// {
-//     $db = new DB();
-//     $stmt = $db->conn->prepare("DELETE  `participants`.`name`, `participants`.`surname`, `trips`.`month` FROM `participants` WHERE `participants`.`trip_id`= `trips`.`id`");
-//     $stmt->bind_param("i", $_POST['id']);
-//     $stmt->execute();
+    public static function find($id)
+    {
+        $participant = new Participant();
+        $db = new DB();
+        $query = "SELECT * FROM `participants` where `id`=" . $id;
+        $result = $db->conn->query($query);
 
-//     $stmt->close();
-//     $db->conn->close();
-// }
+        while ($row = $result->fetch_assoc()) {
+            $participant = new Participant($row['id'], $row['name'], $row['surname'], $row['month']);
+        }
+        $db->conn->close();
+        return $participant;
+    }
+
+    public function update()
+    {
+        $db = new DB();
+        $stmt = $db->conn->prepare("UPDATE `participants` SET `name`= ? ,`surname`= ? ,`month`= ?  WHERE `id` = ?");
+        $stmt->bind_param("ssii", $_POST['name'], $_POST['surname'], $_POST['month'], $_POST['id']);
+        $stmt->execute();
 
 
+        $stmt->close();
+        $db->conn->close();
+    }
 
+    public static function destroy($id)
+    {
+        $db = new DB();
+        $stmt = $db->conn->prepare("DELETE FROM `participants` WHERE `id` = ?");
+        $stmt->bind_param("i", $_POST['id']);
+        $stmt->execute();
+
+        $stmt->close();
+        $db->conn->close();
+    }
 }
 
 ?>

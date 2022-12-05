@@ -19,7 +19,6 @@ class Trip
         $this->distance = $distance;
         $this->withAnimals = $withAnimals;
         $this->registered = $registered;
-
     }
 
     public static function all()
@@ -89,7 +88,7 @@ class Trip
     {
         $trips = [];
         $db = new DB();
-        $query = "SELECT * FROM `trips` ";
+        $query = 'SELECT * FROM `trips`';
         $first = true;
 
         if ($_GET['peopleFrom'] != "") {
@@ -128,19 +127,19 @@ class Trip
         return $trips;
     }
 
-    public static function search()
-    {
-        $trips = [];
-        $db = new DB();
-        $query = "SELECT * FROM `trips` where `month` like \"%" . $_GET['search'] . "%\"";
-        $result = $db->conn->query($query);
+    // public static function search()
+    // {
+    //     $trips = [];
+    //     $db = new DB();
+    //     $query = "SELECT * FROM `trips` where `month` like \"%" . $_GET['search'] . "%\"";
+    //     $result = $db->conn->query($query);
 
-        while ($row = $result->fetch_assoc()) {
-            $trips[] = new Trip($row['id'], $row['month'], $row['max_people_allowed'], $row['distance'], $row['with_animals']);
-        }
-        $db->conn->close();
-        return $trips;
-    }
+    //     while ($row = $result->fetch_assoc()) {
+    //         $trips[] = new Trip($row['id'], $row['month'], $row['max_people_allowed'], $row['distance'], $row['with_animals']);
+    //     }
+    //     $db->conn->close();
+    //     return $trips;
+    // }
 
     public static function getMonth()
     {
@@ -155,7 +154,6 @@ class Trip
         $db->conn->close();
         return $months;
     }
-
 }
 
 ?>
