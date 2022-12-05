@@ -1,9 +1,6 @@
 <?php include "./components/head.php";
 include "./components/navbar.php"; ?>
 
-
-
-
 <div class="container" id="participant">
     <table class="table table-hover">
         <thead>
@@ -12,9 +9,9 @@ include "./components/navbar.php"; ?>
                 <th>participant surname</th>
                 <th>participant name</th>
                 <th>action</th>
-
             </tr>
         </thead>
+        
         <tbody>
             <?php foreach ($participants as $participant) { ?>
             <tr>
